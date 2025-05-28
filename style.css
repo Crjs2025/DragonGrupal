@@ -63,7 +63,8 @@ body {
   background-color: white; 
 }
 
-#tabla-estudiantes th,
+#tabla-estudiantes th {
+  background-color: #dee0e3;
   border: 1px solid #ccc;
   padding: 8px;
 }
