@@ -1,0 +1,43 @@
+// Cambia esta variable manualmente según la cantidad de tareas completadas:
+let tareasCompletadas = 0;
+
+const etapas = [
+  { nombre: "huevo",    limite: 10, sprite: "dragon_huevo.png" },
+  { nombre: "bebé",     limite: 20, sprite: "dragon_bebe.png" },
+  { nombre: "niño",     limite: 50, sprite: "dragon_nino.png" },
+  { nombre: "adolescente", limite: 100, sprite: "dragon_adolescente.png" },
+  { nombre: "adulto",   limite: Infinity, sprite: "dragon_adulto.png" }
+];
+
+function actualizarMascota() {
+  const dragonImg = document.getElementById("dragonImage");
+  const expBar = document.getElementById("expBar");
+  const progressText = document.getElementById("progressText");
+
+  let etapaActual = etapas[0];
+  for (let i = 1; i < etapas.length; i++) {
+    if (tareasCompletadas >= etapas[i].limite) {
+      etapaActual = etapas[i];
+    } else {
+      break;
+    }
+  }
+
+  // Determinar el progreso relativo para la barra
+  let progresoEtapa = 0;
+  let tareasInicio = 0;
+  for (let i = 0; i < etapas.length; i++) {
+    if (etapaActual === etapas[i]) {
+      tareasInicio = i === 0 ? 0 : etapas[i - 1].limite;
+      break;
+    }
+  }
+  const tareasEtapa = etapaActual.limite - tareasInicio;
+  progresoEtapa = ((tareasCompletadas - tareasInicio) / tareasEtapa) * 100;
+
+  dragonImg.src = etapaActual.sprite;
+  expBar.style.width = `${Math.min(progresoEtapa, 100)}%`;
+  progressText.textContent = `${tareasCompletadas}/${etapaActual.limite} tareas completadas`;
+}
+
+actualizarMascota();
