@@ -2,8 +2,7 @@ body {
   font-family: "Oswald";
   text-align: center;
   padding: 2rem;
-  background-image: url("https://raw.githubusercontent.com/Crjs2025/DragonGrupal/refs/heads/main/bg.jpeg");
-  background-attachment: fixed;
+  background: #f0f8ff;
 }
 
 .h1{
