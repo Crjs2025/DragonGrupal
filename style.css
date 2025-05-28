@@ -5,6 +5,10 @@ body {
   padding: 2rem;
 }
 
+.h1{
+  font-family: "Oswald";
+}
+
 .container {
   font-family: "Oswald";
   max-width: 600px;
