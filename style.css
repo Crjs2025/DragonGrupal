@@ -10,6 +10,11 @@ body {
   font-family: "Oswald";
 }
 
+.h3{
+  font-family: "Oswald";
+  font-color: #ffffff;
+}
+
 .container {
   font-family: "Oswald";
   max-width: 600px;
