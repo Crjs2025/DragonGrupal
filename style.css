@@ -5,10 +5,6 @@ body {
   background: #f0f8ff;
 }
 
-.h1{
-  font-family: "Oswald";
-}
-
 .container {
   font-family: "Noto Serif";
   max-width: 600px;
@@ -66,4 +62,8 @@ body {
 
 #tabla-estudiantes thead tr {
   background-color: #f2f2f2;
+}
+
+.h1{
+  font-family: "Oswald";
 }
