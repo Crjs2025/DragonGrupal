@@ -39,5 +39,31 @@ function actualizarMascota() {
   expBar.style.width = `${Math.min(progresoEtapa, 100)}%`;
   progressText.textContent = `${tareasCompletadas}/${etapaActual.limite} tareas completadas`;
 }
+<script>
+  async function cargarEstudiantes() {
+    try {
+      const respuesta = await fetch("https://raw.githubusercontent.com/Crjs2025/DragonGrupal/main/estudiantes.json");
+      const estudiantes = await respuesta.json();
+
+      const tbody = document.getElementById("tabla-estudiantes").querySelector("tbody");
+
+      estudiantes.sort((a, b) => b.tareas - a.tareas); // Ordenar de mayor a menor
+
+      estudiantes.forEach(est => {
+        const fila = document.createElement("tr");
+
+        fila.innerHTML = `
+          <td style="border: 1px solid #ccc; padding: 8px;">${est.nombre}</td>
+          <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">${est.tareas}</td>
+        `;
+
+        tbody.appendChild(fila);
+      });
+    } catch (error) {
+      console.error("Error al cargar estudiantes:", error);
+    }
+  }
+  cargarEstudiantes();
+</script>
 
 actualizarMascota();
