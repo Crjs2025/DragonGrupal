@@ -39,7 +39,6 @@ function actualizarMascota() {
   expBar.style.width = `${Math.min(progresoEtapa, 100)}%`;
   progressText.textContent = `${tareasCompletadas}/${etapaActual.limite} tareas completadas`;
 }
-<script>
   async function cargarEstudiantes() {
     try {
       const respuesta = await fetch("https://raw.githubusercontent.com/Crjs2025/DragonGrupal/main/estudiantes.json");
@@ -64,6 +63,4 @@ function actualizarMascota() {
     }
   }
   cargarEstudiantes();
-</script>
-
 actualizarMascota();
