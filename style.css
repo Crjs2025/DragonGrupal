@@ -43,3 +43,27 @@ body {
   transition: width 0.3s ease;
 }
 
+.titulo-contribuciones {
+  text-align: center;
+}
+
+.contenedor-tabla {
+  display: flex;
+  justify-content: center;
+}
+
+#tabla-estudiantes {
+  border-collapse: collapse;
+  width: 80%;
+  max-width: 600px;
+}
+
+#tabla-estudiantes th,
+#tabla-estudiantes td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+#tabla-estudiantes thead tr {
+  background-color: #f2f2f2;
+}
