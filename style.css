@@ -41,3 +41,5 @@ body {
   background-color: #4caf50;
   transition: width 0.3s ease;
 }
+backrgound-image: url("https://raw.githubusercontent.com/Crjs2025/DragonGrupal/refs/heads/main/bg.jpeg");
+background-attachment: fixed;
