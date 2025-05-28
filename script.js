@@ -23,7 +23,6 @@ function actualizarMascota() {
     }
   }
 
-  // Determinar el progreso relativo para la barra
   let progresoEtapa = 0;
   let tareasInicio = 0;
   for (let i = 0; i < etapas.length; i++) {
@@ -32,6 +31,7 @@ function actualizarMascota() {
       break;
     }
   }
+
   const tareasEtapa = etapaActual.limite - tareasInicio;
   progresoEtapa = ((tareasCompletadas - tareasInicio) / tareasEtapa) * 100;
 
@@ -39,28 +39,30 @@ function actualizarMascota() {
   expBar.style.width = `${Math.min(progresoEtapa, 100)}%`;
   progressText.textContent = `${tareasCompletadas}/${etapaActual.limite} tareas completadas`;
 }
-  async function cargarEstudiantes() {
-    try {
-      const respuesta = await fetch("https://raw.githubusercontent.com/Crjs2025/DragonGrupal/main/estudiantes.json");
-      const estudiantes = await respuesta.json();
 
-      const tbody = document.getElementById("tabla-estudiantes").querySelector("tbody");
+async function cargarEstudiantes() {
+  try {
+    const respuesta = await fetch("https://raw.githubusercontent.com/Crjs2025/DragonGrupal/main/estudiantes.json");
+    const estudiantes = await respuesta.json();
 
-      estudiantes.sort((a, b) => b.tareas - a.tareas); // Ordenar de mayor a menor
+    const tbody = document.getElementById("tabla-estudiantes").querySelector("tbody");
 
-      estudiantes.forEach(est => {
-        const fila = document.createElement("tr");
+    estudiantes.sort((a, b) => b.tareas - a.tareas); // Ordenar de mayor a menor
 
-        fila.innerHTML = `
-          <td style="border: 1px solid #ccc; padding: 8px;">${est.nombre}</td>
-          <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">${est.tareas}</td>
-        `;
+    estudiantes.forEach(est => {
+      const fila = document.createElement("tr");
 
-        tbody.appendChild(fila);
-      });
-    } catch (error) {
-      console.error("Error al cargar estudiantes:", error);
-    }
+      fila.innerHTML = `
+        <td style="border: 1px solid #ccc; padding: 8px;">${est.nombre}</td>
+        <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">${est.tareas}</td>
+      `;
+
+      tbody.appendChild(fila);
+    });
+  } catch (error) {
+    console.error("Error al cargar estudiantes:", error);
   }
-  cargarEstudiantes();
+}
+
 actualizarMascota();
+cargarEstudiantes();
