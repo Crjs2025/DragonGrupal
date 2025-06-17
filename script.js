@@ -14,14 +14,16 @@ function actualizarMascota() {
   const expBar = document.getElementById("expBar");
   const progressText = document.getElementById("progressText");
 
-  let etapaActual = etapas[0];
-  for (let i = 1; i < etapas.length; i++) {
-    if (tareasCompletadas >= etapas[i].limite) {
-      etapaActual = etapas[i];
-    } else {
-      break;
-    }
+let etapaActual = etapas[0];
+for (let i = 0; i < etapas.length; i++) {
+  const limiteInferior = i === 0 ? 0 : etapas[i - 1].limite;
+  const limiteSuperior = etapas[i].limite;
+
+  if (tareasCompletadas >= limiteInferior && tareasCompletadas < limiteSuperior) {
+    etapaActual = etapas[i];
+    break;
   }
+}
 
   let progresoEtapa = 0;
   let tareasInicio = 0;
