@@ -2,16 +2,16 @@
   {"nombre": "Nicol Alvarez", "tareas": 0},
   {"nombre": "Milton Alvez", "tareas": 4},
   {"nombre": "Thiago Cabrera", "tareas": 1},
-  {"nombre": "Milady Correa", "tareas": 5},
+  {"nombre": "Milady Correa", "tareas": 6},
   {"nombre": "Alexia De La Cruz", "tareas": 5},
-  {"nombre": "Mario Delbueno", "tareas": 2},
+  {"nombre": "Mario Delbueno", "tareas": 3},
   {"nombre": "Ashilyn Fernandez", "tareas": 2},
   {"nombre": "Yamila Gomez", "tareas": 1},
   {"nombre": "Brenda Gonzalez", "tareas": 0},
   {"nombre": "Luciano Gonzalez", "tareas": 0},
   {"nombre": "Felipe Leal", "tareas": 7},
   {"nombre": "Mateo Medina", "tareas": 0},
-  {"nombre": "Nahiara Mendez", "tareas": 4},
+  {"nombre": "Nahiara Mendez", "tareas": 5},
   {"nombre": "Maicol Nobile", "tareas": 1},
   {"nombre": "Nelly Perdomo", "tareas": 0},
   {"nombre": "Luciana Rodriguez", "tareas": 0},
@@ -21,3 +21,4 @@
   {"nombre": "Luciano Silva", "tareas": 3},
   {"nombre": "Guillermo Tabarez", "tareas": 2}
 ]
+
