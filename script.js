@@ -1,5 +1,5 @@
 // Cambia esta variable manualmente según la cantidad de tareas completadas:
-let tareasCompletadas = 44;
+let tareasCompletadas = 47;
 
 const etapas = [
   { nombre: "huevo",    limite: 10, sprite: "dragon_huevo.png" },
